@@ -1,0 +1,10 @@
+target/
+!target/kosten-ai-0.0.1-SNAPSHOT.jar
+.mvn/
+mvnw
+mvnw.cmd
+*.md
+.git
+.gitignore
+.env
+application-*.properties

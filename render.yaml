@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: kosten-ai-backend
+    runtime: java
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/kosten-ai-0.0.1-SNAPSHOT.jar
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: kosten-ai-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: kosten-ai-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: kosten-ai-db
+          property: password
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GOOGLE_AI_API_KEY
+        sync: false
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SERVER_PORT
+        value: 8080
+
+databases:
+  - name: kosten-ai-db
+    databaseName: kosten_ai
+    user: kosten_ai_user
