@@ -42,7 +42,6 @@ GRANT ALL PRIVILEGES ON DATABASE kostenai TO kostenai_user;
 
 ### 3. Konfiguration
 
-Erstellen Sie `src/main/resources/application.properties`:
 
 ```properties
 # Server Configuration
@@ -99,30 +98,30 @@ Die Anwendung läuft auf `http://localhost:8080`
 ## 📡 API-Endpunkte
 
 ### Authentication
-| Methode | Endpunkt | Beschreibung |
-|---------|----------|--------------|
-| POST | `/api/auth/register` | Benutzer registrieren |
-| POST | `/api/auth/login` | Benutzer anmelden |
+| Methode | Endpunkt             | Beschreibung          |
+|---------|----------------------|-----------------------|
+| POST    | `/api/auth/register` | Benutzer registrieren |
+| POST    | `/api/auth/login`    | Benutzer anmelden     |
 
 ### Projects
-| Methode | Endpunkt | Beschreibung |
-|---------|----------|--------------|
-| GET | `/api/projects` | Alle Projekte abrufen |
-| GET | `/api/projects/{id}` | Projekt nach ID |
-| POST | `/api/projects` | Neues Projekt erstellen |
-| PUT | `/api/projects/{id}` | Projekt aktualisieren |
-| DELETE | `/api/projects/{id}` | Projekt löschen |
+| Methode | Endpunkt            | Beschreibung            |
+|---------|---------------------|-------------------------|
+| GET | `/api/projects`         | Alle Projekte abrufen   |
+| GET | `/api/projects/{id}`    | Projekt nach ID         |
+| POST | `/api/projects`        | Neues Projekt erstellen |
+| PUT | `/api/projects/{id}`    | Projekt aktualisieren   |
+| DELETE | `/api/projects/{id}` | Projekt löschen         |
 
 ### Invoices
-| Methode | Endpunkt | Beschreibung |
-|---------|----------|--------------|
-| GET | `/api/invoices` | Alle Rechnungen abrufen |
-| GET | `/api/invoices/{id}` | Rechnung nach ID |
-| GET | `/api/invoices/project/{projectId}` | Rechnungen nach Projekt |
-| POST | `/api/invoices/upload/{projectId}` | Rechnung hochladen & analysieren |
-| PUT | `/api/invoices/{id}` | Rechnung aktualisieren |
-| DELETE | `/api/invoices/{id}` | Rechnung löschen |
-| GET | `/api/invoices/{id}/download` | Rechnungsbild herunterladen |
+| Methode | Endpunkt                             | Beschreibung                     |
+|---------|--------------------------------------|----------------------------------|
+| GET     | `/api/invoices`                      | Alle Rechnungen abrufen          |
+| GET     | `/api/invoices/{id}`                 | Rechnung nach ID                 |
+| GET     | `/api/invoices/project/{projectId}`  | Rechnungen nach Projekt          |
+| POST    | `/api/invoices/upload/{projectId}`   | Rechnung hochladen & analysieren |
+| PUT     | `/api/invoices/{id}`                 | Rechnung aktualisieren           |
+| DELETE  | `/api/invoices/{id}`                 | Rechnung löschen                 |
+| GET     | `/api/invoices/{id}/download`        | Rechnungsbild herunterladen      |
 
 ### Request/Response Beispiele
 
@@ -266,15 +265,3 @@ FROM openjdk:17-slim
 COPY target/kosten-ai-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 ```
-
-## 📄 Lizenz
-
-Dieses Projekt ist privat und nicht für die öffentliche Nutzung bestimmt.
-
-## 👥 Autoren
-
-KostenAI Development Team
-
-## 📞 Support
-
-Bei Fragen oder Problemen wenden Sie sich an das Entwicklungsteam.
